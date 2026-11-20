@@ -1,0 +1,369 @@
+
+/* =====================================
+   DevConnect - Global Styles
+===================================== */
+
+:root {
+    --dc-navy: #172554;
+    --dc-blue: #2563eb;
+    --dc-blue-hover: #1d4ed8;
+    --dc-text: #1e293b;
+    --dc-muted: #64748b;
+    --dc-bg: #f5f7fc;
+    --dc-border: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dc-bg);
+    color: var(--dc-text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =====================================
+   Navbar - Explicit background
+===================================== */
+
+.dc-navbar {
+    background: linear-gradient(110deg, #172554 0%, #1d4ed8 100%) !important;
+    padding: 15px 0;
+    box-shadow: 0 4px 18px rgba(23, 37, 84, 0.16);
+}
+
+.dc-navbar .dc-brand {
+    color: #ffffff !important;
+    font-size: 1.55rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.brand-dot {
+    color: #93c5fd;
+}
+
+.dc-navbar .dc-nav-link {
+    color: #e2e8f0 !important;
+    padding: 9px 16px !important;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.dc-navbar .dc-nav-link:hover,
+.dc-navbar .dc-nav-link.active {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.dc-navbar .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.dc-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.35);
+}
+
+/* =====================================
+   Main Layout
+===================================== */
+
+.dc-main {
+    flex: 1;
+    padding-top: 42px;
+    padding-bottom: 55px;
+}
+
+/* =====================================
+   Hero Section
+===================================== */
+
+.dc-hero {
+    margin-bottom: 32px;
+}
+
+.dc-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-bottom: 16px;
+    border: 1px solid #bfdbfe;
+    border-radius: 50px;
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.dc-hero h1 {
+    margin-bottom: 12px;
+    color: var(--dc-navy);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 800;
+    letter-spacing: -1.3px;
+    line-height: 1.2;
+}
+
+.dc-hero p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--dc-muted);
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+/* =====================================
+   Welcome Card
+===================================== */
+
+.dc-welcome {
+    border: 1px solid var(--dc-border);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 8px 28px rgba(30, 64, 175, 0.07);
+}
+
+.dc-welcome .card-body {
+    padding: clamp(24px, 5vw, 42px);
+}
+
+.dc-eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--dc-blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.dc-welcome h2 {
+    margin-bottom: 14px;
+    color: var(--dc-navy);
+    font-size: clamp(1.7rem, 4vw, 2.35rem);
+    font-weight: 800;
+    letter-spacing: -0.7px;
+}
+
+.dc-welcome p {
+    margin-bottom: 24px;
+    color: var(--dc-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* =====================================
+   Buttons
+===================================== */
+
+.dc-primary-btn {
+    padding: 11px 19px;
+    border: 1px solid var(--dc-blue);
+    border-radius: 9px;
+    background-color: var(--dc-blue);
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.dc-primary-btn:hover {
+    border-color: var(--dc-blue-hover);
+    background-color: var(--dc-blue-hover);
+    color: #ffffff;
+    box-shadow: 0 5px 14px rgba(37, 99, 235, 0.22);
+    transform: translateY(-1px);
+}
+
+/* =====================================
+   Features Section
+===================================== */
+
+.dc-features {
+    margin-top: 56px;
+}
+
+.dc-section-heading {
+    margin-bottom: 26px;
+}
+
+.dc-section-heading h2 {
+    margin-bottom: 10px;
+    color: var(--dc-navy);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 800;
+}
+
+.dc-section-heading p {
+    margin-bottom: 0;
+    color: var(--dc-muted);
+    line-height: 1.7;
+}
+
+/* =====================================
+   Feature Cards
+===================================== */
+
+.dc-feature-card {
+    height: 100%;
+    border: 1px solid var(--dc-border);
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(30, 64, 175, 0.04);
+    transition: transform 0.22s ease,
+                box-shadow 0.22s ease,
+                border-color 0.22s ease;
+}
+
+.dc-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: #bfdbfe;
+    box-shadow: 0 12px 28px rgba(30, 64, 175, 0.11);
+}
+
+.dc-feature-card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 26px;
+}
+
+.dc-feature-icon {
+    display: flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.dc-blue {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+}
+
+.dc-purple {
+    background-color: #ede9fe;
+    color: #6d28d9;
+}
+
+.dc-green {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.dc-feature-card h3 {
+    margin-bottom: 12px;
+    color: var(--dc-navy);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.dc-feature-card p {
+    margin-bottom: 22px;
+    color: var(--dc-muted);
+    line-height: 1.8;
+}
+
+.dc-feature-link {
+    margin-top: auto;
+    color: var(--dc-blue);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.dc-feature-link:hover {
+    color: var(--dc-blue-hover);
+    text-decoration: underline;
+}
+
+/* =====================================
+   Footer
+===================================== */
+
+.dc-footer {
+    margin-top: auto;
+    padding: 25px 0;
+    background-color: #111c3b;
+    color: #e2e8f0;
+}
+
+.dc-footer p {
+    font-size: 0.95rem;
+}
+
+.dc-footer small {
+    color: #b7c5df;
+}
+
+/* =====================================
+   Responsive Design
+===================================== */
+
+@media (max-width: 767.98px) {
+    .dc-main {
+        padding-top: 30px;
+        padding-bottom: 38px;
+    }
+
+    .dc-hero {
+        margin-bottom: 25px;
+    }
+
+    .dc-hero p {
+        font-size: 1rem;
+    }
+
+    .dc-welcome .card-body {
+        padding: 25px;
+    }
+
+    .dc-features {
+        margin-top: 42px;
+    }
+
+    .dc-feature-card .card-body {
+        padding: 23px;
+    }
+}
+
+/* =====================================
+   Accessibility
+===================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    .dc-feature-card:hover,
+    .dc-primary-btn:hover {
+        transform: none;
+    }
+}

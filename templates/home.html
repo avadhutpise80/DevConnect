@@ -1,0 +1,112 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home | DevConnect{% endblock %}
+
+{% block content %}
+
+<section class="dc-hero text-center">
+    <span class="dc-badge">A COMMUNITY FOR DEVELOPERS</span>
+
+    <h1>Your Developer Community</h1>
+
+    <p>
+        Share knowledge, showcase projects, and connect with developers.
+    </p>
+</section>
+
+<section class="card dc-welcome">
+    <div class="card-body">
+        <span class="dc-eyebrow">WELCOME TO DEVCONNECT</span>
+
+        <h2>Build something amazing.</h2>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% else %}
+            <p>
+                Connect with developers, share your ideas, and grow together.
+            </p>
+        {% endif %}
+
+        <a href="#community-features" class="btn dc-primary-btn">
+            Explore DevConnect <span aria-hidden="true">&rarr;</span>
+        </a>
+    </div>
+</section>
+
+<section id="community-features" class="dc-features">
+    <div class="text-center dc-section-heading">
+        <h2>Everything you need to grow</h2>
+        <p>Learn, share, and connect with the developer community.</p>
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <article class="card dc-feature-card h-100">
+                <div class="card-body">
+                    <div class="dc-feature-icon dc-blue" aria-hidden="true">
+                        &lt;/&gt;
+                    </div>
+
+                    <h3>Share Posts</h3>
+
+                    <p>
+                        Share your coding journey, technical knowledge,
+                        ideas, and development experiences.
+                    </p>
+
+                    <a href="/posts/" class="dc-feature-link">
+                        Explore Posts <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-4">
+            <article class="card dc-feature-card h-100">
+                <div class="card-body">
+                    <div class="dc-feature-icon dc-purple" aria-hidden="true">
+                        &#9822;
+                    </div>
+
+                    <h3>Connect</h3>
+
+                    <p>
+                        Discover developers, exchange ideas, and learn
+                        from each other's experiences.
+                    </p>
+
+                   <a href="/community/" class="dc-feature-link">
+    Meet the Community <span aria-hidden="true">&rarr;</span>
+</a>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-4">
+            <article class="card dc-feature-card h-100">
+                <div class="card-body">
+                    <div class="dc-feature-icon dc-green" aria-hidden="true">
+                        &#8599;
+                    </div>
+
+                    <h3>Grow Together</h3>
+
+                    <p>
+                        Showcase projects, exchange feedback, and keep
+                        improving your development skills.
+                    </p>
+
+                    <a href="/projects/" class="dc-feature-link">
+    Explore Projects <span aria-hidden="true">&rarr;</span>
+</a>
+                </div>
+            </article>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

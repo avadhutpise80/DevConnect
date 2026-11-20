@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}My Profile | DevConnect{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <h2>My Developer Profile</h2>
+    <p>Tell the community about yourself.</p>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+
+            {% if profile.full_name or profile.bio or profile.skills %}
+                <div class="card mb-4">
+                    <div class="card-body">
+
+                        <h4>{{ profile.full_name|default:request.user.username }}</h4>
+
+                        <p>{{ profile.bio }}</p>
+
+                        <p>
+                            <strong>Skills:</strong> {{ profile.skills }}
+                        </p>
+
+                        {% if profile.github_url %}
+                            <p>
+                                <strong>GitHub:</strong>
+                                <a href="{{ profile.github_url }}" target="_blank">
+                                    Visit GitHub
+                                </a>
+                            </p>
+                        {% endif %}
+
+                        {% if profile.linkedin_url %}
+                            <p>
+                                <strong>LinkedIn:</strong>
+                                <a href="{{ profile.linkedin_url }}" target="_blank">
+                                    Visit LinkedIn
+                                </a>
+                            </p>
+                        {% endif %}
+
+                    </div>
+                </div>
+            {% endif %}
+
+            <form method="POST">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button type="submit" class="btn btn-primary">
+                    Save Profile
+                </button>
+
+                <a href="{% url 'home' %}" class="btn btn-secondary">
+                    Cancel
+                </a>
+            </form>
+
+            <hr class="my-4">
+
+            <div class="mb-4">
+                <h5 class="text-danger">Danger Zone</h5>
+
+                <p class="text-muted">
+                    Deleting your account will permanently remove your profile,
+                    posts, and projects.
+                </p>
+
+                <a href="{% url 'delete_account' %}" class="btn btn-danger">
+                    Delete My Account
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

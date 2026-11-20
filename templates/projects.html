@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1>Developer Projects</h1>
+            <p>Discover projects, showcase your work, and get inspired.</p>
+        </div>
+
+        <a href="{% url 'create_project' %}" class="btn btn-primary">
+            + Create Project
+        </a>
+    </div>
+
+    {% if projects %}
+
+        <div class="row">
+
+            {% for project in projects %}
+
+                <div class="col-md-6 mb-4">
+
+                    <div class="card h-100 shadow-sm">
+
+                        <div class="card-body">
+
+                            <h4 class="card-title">
+                                {{ project.title }}
+                            </h4>
+
+                            <p class="card-text">
+                                {{ project.description }}
+                            </p>
+
+                            <p>
+                                <strong>Tech Stack:</strong>
+                                {{ project.tech_stack }}
+                            </p>
+
+                            <p>
+                                <strong>Created by:</strong>
+                                {{ project.owner.username }}
+                            </p>
+
+                            {% if project.github_url %}
+                                <a href="{{ project.github_url }}"
+                                   target="_blank"
+                                   class="btn btn-dark">
+                                    GitHub
+                                </a>
+                            {% endif %}
+
+                            {% if project.live_url %}
+                                <a href="{{ project.live_url }}"
+                                   target="_blank"
+                                   class="btn btn-success">
+                                    Live Demo
+                                </a>
+                            {% endif %}
+
+                            {% if project.owner == request.user %}
+                             <a href="{% url 'edit_project' project.pk %}"
+                                 class="btn btn-warning">
+                                    Edit
+                             </a>
+                                <a href="{% url 'delete_project' project.pk %}"
+                                class="btn btn-danger">
+                                    Delete
+                                </a>
+{% endif %}
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="alert alert-info">
+            No projects have been added yet.
+        </div>
+
+    
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
